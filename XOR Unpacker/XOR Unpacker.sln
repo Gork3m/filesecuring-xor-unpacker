@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XOR Unpacker", "XOR Unpacker\XOR Unpacker.csproj", "{C467E186-0CCE-4C47-8D10-41151A24BF68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLI", "CLI\CLI.csproj", "{A22E4775-8C0B-40C9-B3F9-A1584C678EA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C467E186-0CCE-4C47-8D10-41151A24BF68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C467E186-0CCE-4C47-8D10-41151A24BF68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C467E186-0CCE-4C47-8D10-41151A24BF68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C467E186-0CCE-4C47-8D10-41151A24BF68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A22E4775-8C0B-40C9-B3F9-A1584C678EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22E4775-8C0B-40C9-B3F9-A1584C678EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22E4775-8C0B-40C9-B3F9-A1584C678EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22E4775-8C0B-40C9-B3F9-A1584C678EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1721C06-4622-4B2E-8D27-36A82F7B38A9}
+	EndGlobalSection
+EndGlobal
