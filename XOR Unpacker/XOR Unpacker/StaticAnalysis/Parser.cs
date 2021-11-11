@@ -10,19 +10,14 @@ namespace XOR_Unpacker.StaticAnalysis {
 			Regex loaderData = new Regex(@"\(""(.{300,})""\)", RegexOptions.Singleline);
 			if (loaderData.IsMatch(input)) {
 				Debug.Log("[2/7] ---> Detected loader!", ConsoleColor.Yellow);
-				for (int i = 255; i >= 0; i--) {
-					string a = ((char)i).ToString();
-					if (a == "\\") a = "%ESCAPED_BSLASH%";
-					input = input.Replace(@"\" + i, "%REPLACE%" + a + "%REPLACE%");
-				}
-				return input.Replace("%REPLACE%", "").Replace("%ESCAPED_BSLASH%", "\\");
+				input = loaderData.Match(input).Groups[1].Value;
+				byte[] bytes = Array.ConvertAll(input.Substring(1).Split('\\'), b => (byte)(int.Parse(b)));
+				return Encoding.ASCII.GetString(bytes);
+				
 			} else {
 				return input;
             }
 
-			/*
-			return Regex.Unescape(input);			
-			*/
 		}
 
 		public static string GetMainCall(string script) {
@@ -43,9 +38,6 @@ namespace XOR_Unpacker.StaticAnalysis {
 				string main = GetMainCall(script).Replace(" ","");
 
 				Debug.Log("[3/7] Fetching handlers..");
-				// + 20 test paragrafını çözdün mü???
-				// - paragrafı siktir et abi daha önemli birşey var
-
 
 				bool isOriginalXOR = false;
 				Regex r = new Regex(@"key *?= *?""(.+?)""", RegexOptions.Singleline);
