@@ -7,7 +7,7 @@ using System.Linq;
 namespace XOR_Unpacker.StaticAnalysis {
     public static class Parser {
         public static string DecodeLoader(string input) {
-			Regex loaderData = new Regex(@"\(""(.{300,})""\)", RegexOptions.Singleline);
+			Regex loaderData = new Regex(@"\(""(.{300,})""\)\(\)", RegexOptions.Singleline);
 			if (loaderData.IsMatch(input)) {
 				Debug.Log("[2/7] ---> Detected loader!", ConsoleColor.Yellow);
 				input = loaderData.Match(input).Groups[1].Value;
